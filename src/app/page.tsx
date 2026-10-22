@@ -19,8 +19,8 @@ export default function Home() {
         <Statement />
         <Stats />
         <Experience />
-        <Toolkit />
         <Research />
+        <Toolkit />
         <About />
       </main>
       <Footer />

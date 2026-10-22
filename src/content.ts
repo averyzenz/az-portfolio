@@ -32,7 +32,7 @@ export const seo = {
 
 export const nav = [
   { label: "Experience", href: "#experience" },
-  { label: "Research", href: "#research" },
+  { label: "Writing", href: "#research" },
   { label: "About", href: "#about" },
 ];
 
@@ -43,8 +43,8 @@ export const hero = {
   // Shown when /public/resume.pdf exists, otherwise `primaryCtaFallback`.
   primaryCta: { label: "View Resume", href: "/resume.pdf" },
   primaryCtaFallback: { label: "Get in Touch", href: "#contact" },
-  // Shown when at least one research note exists, otherwise `secondaryCtaFallback`.
-  secondaryCta: { label: "Read My Research", href: "#research" },
+  // Shown when at least one writing entry exists, otherwise `secondaryCtaFallback`.
+  secondaryCta: { label: "Read My Writing", href: "#research" },
   secondaryCtaFallback: { label: "See My Experience", href: "#experience" },
   photo: {
     file: "headshot.jpg",
@@ -191,33 +191,59 @@ export type ResearchNote = {
   type: string;
   date: string;
   title: string;
+  /** Where it was published, shown under the title. */
+  source?: string;
+  /** Optional recognition, shown as a small badge. */
+  award?: string;
   summary: string;
   href: string;
   linkLabel: string;
 };
 
 export const research = {
-  label: "Research",
-  heading: "Market notes",
+  label: "Writing",
+  heading: "Published work",
   intro:
-    "Sector and investment analysis I write on my own time. Each note states the thesis, the numbers behind it, and the risks.",
+    "Articles I have written for the Vanderbilt Business Review and beyond, from how private equity creates value to building a professional network.",
   /**
-   * The Research section, its nav link and the "Read My Research" button only
-   * appear once this list has at least one note. Put each PDF in
-   * /public/research/ and add an entry like:
-   *
-   * {
-   *   type: "Sector Note",              // or "Equity Pitch", "Private Markets"
-   *   date: "November 2026",
-   *   title: "Data center REITs: power is the new land",
-   *   summary: "Two sentences on the thesis and what drives it.",
-   *   href: "/research/sector-note.pdf",
-   *   linkLabel: "Read the note (PDF)",
-   * },
-   *
-   * Public information only: no confidential Validus fund names or figures.
+   * The section, its nav link and the "Read My Writing" button only appear
+   * when this list has at least one entry. `href` can be an outside article
+   * or a PDF in /public/research/. Public information only: no confidential
+   * Validus fund names or figures.
    */
-  notes: [] as ResearchNote[],
+  notes: [
+    {
+      type: "Private Equity",
+      date: "November 2025",
+      title: "Fixer-Uppers of Finance: How Private Equity Turns Struggling Companies into Gold",
+      source: "Vanderbilt Business Review",
+      summary:
+        "How private equity firms buy, improve, and sell businesses, explained through a house-flipping lens, from venture capital and growth equity to leveraged buyouts and distressed investing.",
+      href: "https://vanderbiltbusinessreview.com/2564/fixer-uppers-of-finance-how-private-equity-turns-struggling-companies-into-gold/",
+      linkLabel: "Read the article",
+    },
+    {
+      type: "Careers",
+      date: "October 2025",
+      title: "Turning Connections into Careers: Mastering LinkedIn Networking",
+      source: "Vanderbilt Business Review",
+      award: "Article of the Month",
+      summary:
+        "Why so many roles are filled through connections, and how a current profile, industry groups, and personalized outreach turn LinkedIn into real professional relationships.",
+      href: "https://vanderbiltbusinessreview.com/2535/turning-connections-into-careers-mastering-linkedin-networking/",
+      linkLabel: "Read the article",
+    },
+    {
+      type: "Social Media",
+      date: "July 2022",
+      title: "Social Media: Where are the Youth Going?",
+      source: "Two Minds Think Better Than One",
+      summary:
+        "A look at how Instagram, Snapchat, and TikTok shape the way younger generations communicate, learn, and spend their time.",
+      href: "https://twominds.substack.com/p/social-media-where-are-the-youth",
+      linkLabel: "Read the article",
+    },
+  ] as ResearchNote[],
 };
 
 export const about = {
@@ -229,14 +255,7 @@ export const about = {
     "Away from work, I surf, ski, and read. I was also a competitive dancer and danced on the Vanderbilt Dance Team.",
   ],
   // Small list of outside links under the bio. Leave empty to hide it.
-  links: [
-    {
-      label: "Writing",
-      title: "Social Media: Where are the Youth Going?",
-      source: "Two Minds Think Better Than One, 2022",
-      href: "https://twominds.substack.com/p/social-media-where-are-the-youth",
-    },
-  ],
+  links: [] as { label: string; title: string; source: string; href: string }[],
   photos: [
     { file: "painting.jpg", alt: "A spread of Avery Zenz's fashion-inspired paintings, including a Vogue cover and pink bows", placeholder: "Painting", tone: "ink" },
     { file: "travel.jpg", alt: "Avery Zenz tandem paragliding above a mountain town and lake", placeholder: "Travel", tone: "blush" },
