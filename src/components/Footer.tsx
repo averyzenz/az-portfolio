@@ -9,7 +9,7 @@ export function Footer() {
       <Container className="flex flex-col gap-9 pt-20 pb-12 sm:pt-24 sm:pb-[52px]">
         <h2
           data-reveal
-          className="font-display font-bold leading-[0.9] tracking-[-0.04em] text-[clamp(72px,10vw,112px)]"
+          className="font-display font-medium leading-none tracking-[-0.02em] text-[clamp(48px,6vw,72px)]"
         >
           {contact.heading} <em className="font-medium text-blush">{contact.accent}</em>
         </h2>

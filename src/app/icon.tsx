@@ -18,12 +18,13 @@ export default async function Icon() {
           color: "#111111",
           fontFamily: "Bodoni Moda",
           fontWeight: 700,
-          fontSize: 54,
+          fontSize: 34,
+          letterSpacing: "-0.04em",
           lineHeight: 1,
           paddingBottom: 4,
         }}
       >
-        Z
+        AZ
       </div>
     ),
     { ...size, fonts: await loadOgFonts() },

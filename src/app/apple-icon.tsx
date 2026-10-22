@@ -18,12 +18,13 @@ export default async function AppleIcon() {
           color: "#111111",
           fontFamily: "Bodoni Moda",
           fontWeight: 700,
-          fontSize: 140,
+          fontSize: 92,
+          letterSpacing: "-0.04em",
           lineHeight: 1,
           paddingBottom: 10,
         }}
       >
-        Z
+        AZ
       </div>
     ),
     { ...size, fonts: await loadOgFonts() },

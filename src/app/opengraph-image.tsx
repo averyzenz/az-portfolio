@@ -72,13 +72,13 @@ export default async function OpengraphImage() {
               fontFamily: "Bodoni Moda",
               fontStyle: "italic",
               fontWeight: 500,
-              fontSize: 260,
+              fontSize: 150,
               lineHeight: 1,
               color: "#8C2F4F",
               marginBottom: 20,
             }}
           >
-            Z
+            AZ
           </div>
         </div>
       </div>

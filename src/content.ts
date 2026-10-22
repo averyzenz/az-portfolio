@@ -17,7 +17,7 @@
 
 export const profile = {
   name: "Avery Zenz",
-  wordmark: "ZENZ",
+  wordmark: "Avery Zenz",
   school: "Vanderbilt University",
   email: "avery.a.zenz@vanderbilt.edu",
   linkedin: "https://www.linkedin.com/in/avery-zenz/",
