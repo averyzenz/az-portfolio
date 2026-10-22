@@ -27,7 +27,7 @@ export const profile = {
 export const seo = {
   title: "Avery Zenz | Wealth and Asset Management",
   description:
-    "Avery Zenz is a Vanderbilt senior seeking full-time roles in private credit, equity research and real estate private equity, starting summer 2027.",
+    "Avery Zenz is a Vanderbilt senior seeking full-time roles in private credit, equity research, and real estate private equity, starting summer 2027.",
 };
 
 export const nav = [
@@ -71,7 +71,7 @@ export const statement = {
 export const stats = [
   {
     value: "4+",
-    label: "alternative funds analyzed across private credit, real estate and direct lending",
+    label: "alternative funds analyzed across private credit, real estate, and direct lending",
   },
   {
     value: "10+",
@@ -116,7 +116,7 @@ export const experience = {
       title: "Inside the investment committee",
       meta: "Summer 2026 · Wealth Management Intern",
       body:
-        "At Validus Capital, I analyzed 4+ alternative investment funds across private credit, real estate and direct lending, evaluating IRR, MOIC and distribution waterfall structures to support investment committee decisions. I presented 10+ weekly fund pitches and portfolio updates, and met senior professionals at 6 asset managers and institutions.",
+        "At Validus Capital, I analyzed 4+ alternative investment funds across private credit, real estate, and direct lending, evaluating IRR, MOIC, and distribution waterfall structures to support investment committee decisions. I presented 10+ weekly fund pitches and portfolio updates, and met senior professionals at 6 asset managers and institutions.",
       photo: {
         file: "validus.jpg",
         alt: "Avery Zenz with members of the Validus Capital team in front of the firm's sign",
@@ -147,7 +147,7 @@ export const experience = {
       title: "Building a business from the cost structure up",
       meta: "2022 to present · Co-Founder",
       body:
-        "I co-founded a direct-to-consumer bakery and took it from concept to market with a 13-item menu of cookies, bars and brownies. I set pricing and go-to-market strategy through cost-structure, competitive and positioning analysis, built the brand identity, packaging and ordering website from scratch, and grew our social following organically.",
+        "I co-founded a direct-to-consumer bakery and took it from concept to market with a 13-item menu of cookies, bars, and brownies. I set pricing and go-to-market strategy through cost-structure, competitive, and positioning analysis, built the brand identity, packaging, and ordering website from scratch, and grew our social following organically.",
       photo: {
         file: "sweet-couture.jpg",
         alt: "Chocolate chip cookies from Sweet Couture, the bakery Avery Zenz co-founded",
@@ -224,8 +224,8 @@ export const about = {
   label: "About",
   heading: "Off the clock",
   bio: [
-    "I study Human and Organizational Development with a minor in Business at Vanderbilt, graduating May 2027. I studied business in Barcelona and the business of fashion in Paris, Florence and Milan.",
-    "I have been building things for a while: I founded a marine mammal rescue nonprofit that raised $2,500+ and an entrepreneurs club that grew to 30+ members, and I led PR and marketing for Vanderbilt’s Panhellenic Council. I also paint, and turned it into AZ Paintings, my independent art business.",
+    "I study Human and Organizational Development with a minor in Business at Vanderbilt University, graduating May 2027. I studied business in Barcelona and the business of fashion in Paris, Florence, and Milan.",
+    "Outside the classroom, I have founded and led organizations from the ground up: the Pacific Mammal Rescue Project, a nonprofit that raised over $2,500, and the Future Entrepreneurs Club, which grew to more than 30 members. At Vanderbilt, I served as VP of PR and Marketing for the Panhellenic Council. I also started AZ Paintings, an independent art business.",
     "Away from work, I surf and ski. I was also a competitive dancer and danced on the Vanderbilt Dance Team.",
   ],
   // Small list of outside links under the bio. Leave empty to hide it.
@@ -247,7 +247,7 @@ export const about = {
 export const contact = {
   heading: "Let’s",
   accent: "talk.",
-  line: "Open to full-time roles in wealth and asset management, starting summer 2027.",
+  line: "Open to full-time financial analyst roles, starting summer 2027.",
   buttons: {
     email: "Email Avery",
     resume: "Download Resume",
