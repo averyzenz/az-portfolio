@@ -134,10 +134,10 @@ export const experience = {
       title: "Building a business from the cost structure up",
       meta: "2022 to present · Co-Founder",
       body:
-        "I co-founded a direct-to-consumer bakery and took it from concept to market. I set pricing and go-to-market strategy through cost-structure, competitive and positioning analysis, built the brand identity, packaging and e-commerce site from scratch, and grew our social following organically.",
+        "I co-founded a direct-to-consumer bakery and took it from concept to market with a 13-item menu of cookies, bars and brownies. I set pricing and go-to-market strategy through cost-structure, competitive and positioning analysis, built the brand identity, packaging and ordering website from scratch, and grew our social following organically.",
       photo: {
         file: "sweet-couture.jpg",
-        alt: "Pastries from Sweet Couture, the bakery Avery Zenz co-founded",
+        alt: "Chocolate chip cookies from Sweet Couture, the bakery Avery Zenz co-founded",
         placeholder: "Sweet Couture product photo",
       },
     },
@@ -182,12 +182,12 @@ export const about = {
   heading: "Off the clock",
   bio: [
     "I study Human and Organizational Development with a minor in Business at Vanderbilt, graduating May 2027. I studied business in Barcelona and the business of fashion in Paris, Florence and Milan.",
-    "I have been building things for a while: I founded a marine mammal rescue nonprofit that raised $2,500+ and an entrepreneurs club that grew to 30+ members, and I led PR and marketing for Vanderbilt’s Panhellenic Council. Away from work, I paint, surf and ski.",
+    "I have been building things for a while: I founded a marine mammal rescue nonprofit that raised $2,500+ and an entrepreneurs club that grew to 30+ members, and I led PR and marketing for Vanderbilt’s Panhellenic Council. Away from work, I paint, surf and ski. I was also a competitive dancer and danced on the Vanderbilt Dance Team.",
   ],
   photos: [
     { file: "painting.jpg", alt: "A spread of Avery Zenz's fashion-inspired paintings, including a Vogue cover and pink bows", placeholder: "Painting", tone: "ink" },
     { file: "travel.jpg", alt: "Avery Zenz tandem paragliding above a mountain town and lake", placeholder: "Travel", tone: "blush" },
-    { file: "surf.jpg", alt: "Avery Zenz surfing", placeholder: "Surf or ski", tone: "petal" },
+    { file: "dance.jpg", alt: "Avery Zenz mid-leap on stage at a dance competition", placeholder: "Dance", tone: "petal" },
   ] as const,
 };
 
