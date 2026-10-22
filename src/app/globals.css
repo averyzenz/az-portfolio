@@ -91,6 +91,37 @@
   }
 }
 
+/* Experience chapters: text slides in from the side you are moving toward. */
+@keyframes page-next {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes page-prev {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-page-next {
+  animation: page-next 500ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.animate-page-prev {
+  animation: page-prev 500ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
 /* Ticker tape: the track holds the list twice and slides by half its width. */
 @keyframes marquee {
   to {

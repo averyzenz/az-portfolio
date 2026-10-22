@@ -14,8 +14,18 @@ type Props = {
 
 export function ExperienceTabs({ heading, label, chapters }: Props) {
   const [active, setActive] = useState(0);
+  // Direction of the last change, so the text slides in from the matching side.
+  const [direction, setDirection] = useState<1 | -1>(1);
+  const [changed, setChanged] = useState(false);
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
   const current = chapters[active];
+
+  function select(i: number) {
+    if (i === active) return;
+    setDirection(i > active ? 1 : -1);
+    setChanged(true);
+    setActive(i);
+  }
 
   function onKeyDown(e: KeyboardEvent<HTMLButtonElement>) {
     const last = chapters.length - 1;
@@ -31,7 +41,7 @@ export function ExperienceTabs({ heading, label, chapters }: Props) {
               : null;
     if (next === null) return;
     e.preventDefault();
-    setActive(next);
+    select(next);
     tabs.current[next]?.focus();
   }
 
@@ -52,9 +62,15 @@ export function ExperienceTabs({ heading, label, chapters }: Props) {
       <div
         role="tablist"
         aria-label="Experience chapters"
-        className="grid border-[1.5px] border-ink"
+        className="relative grid border-[1.5px] border-ink"
         style={{ gridTemplateColumns: `repeat(${chapters.length}, minmax(0, 1fr))` }}
       >
+        {/* Black highlight that slides to the selected chapter. */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 left-0 bg-ink transition-transform duration-500 ease-[cubic-bezier(0.65,0,0.35,1)]"
+          style={{ width: `${100 / chapters.length}%`, transform: `translateX(${active * 100}%)` }}
+        />
         {chapters.map((c, i) => {
           const selected = i === active;
           return (
@@ -69,14 +85,14 @@ export function ExperienceTabs({ heading, label, chapters }: Props) {
               aria-selected={selected}
               aria-controls={`panel-${c.num}`}
               tabIndex={selected ? 0 : -1}
-              onClick={() => setActive(i)}
+              onClick={() => select(i)}
               onKeyDown={onKeyDown}
-              className={`flex min-h-11 cursor-pointer flex-col items-start gap-1 px-3 py-3 text-left transition-colors duration-200 sm:flex-row sm:items-baseline sm:gap-3 sm:px-5 sm:py-4 ${
+              className={`relative flex min-h-11 cursor-pointer flex-col items-start gap-1 px-3 py-3 text-left transition-colors duration-300 sm:flex-row sm:items-baseline sm:gap-3 sm:px-5 sm:py-4 ${
                 i > 0 ? "border-l-[1.5px] border-ink" : ""
-              } ${selected ? "bg-ink text-paper" : "bg-paper text-ink hover:bg-blush"}`}
+              } ${selected ? "text-paper" : "text-ink hover:bg-blush"}`}
             >
               <span
-                className={`font-display text-[22px] leading-none sm:text-[28px] ${selected ? "text-blush" : "text-rose"}`}
+                className={`font-display text-[22px] leading-none transition-colors duration-300 sm:text-[28px] ${selected ? "text-blush" : "text-rose"}`}
               >
                 {c.num}
               </span>
@@ -91,7 +107,7 @@ export function ExperienceTabs({ heading, label, chapters }: Props) {
         role="tabpanel"
         aria-labelledby={`tab-${current.num}`}
         tabIndex={0}
-        className="grid gap-10 pt-2 lg:grid-cols-2 lg:gap-12"
+        className="grid gap-10 overflow-x-clip pt-2 lg:grid-cols-2 lg:gap-12"
       >
         <div className="relative h-[300px] overflow-hidden bg-blush md:h-auto md:aspect-[16/9] lg:aspect-auto lg:min-h-[440px]">
           {chapters.map((c, i) => (
@@ -117,7 +133,12 @@ export function ExperienceTabs({ heading, label, chapters }: Props) {
             </div>
           ))}
         </div>
-        <div className="flex min-w-0 flex-col justify-center gap-[18px]">
+        <div
+          key={current.num}
+          className={`flex min-w-0 flex-col justify-center gap-[18px] ${
+            !changed ? "" : direction > 0 ? "animate-page-next" : "animate-page-prev"
+          }`}
+        >
           <p aria-hidden="true" className="font-display text-[clamp(64px,7vw,88px)] leading-none text-rose">
             {current.num}
           </p>
