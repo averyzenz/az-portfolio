@@ -180,10 +180,10 @@ export const about = {
   heading: "Off the clock",
   bio: [
     "I study Human and Organizational Development with a minor in Business at Vanderbilt, graduating May 2027. I studied business in Barcelona and the business of fashion in Paris, Florence and Milan.",
-    "I have been building things for a while: I founded a marine mammal rescue nonprofit that raised $2,500+ and an entrepreneurs club that grew to 30+ members, and I led PR and marketing for Vanderbilt’s Panhellenic Council. Away from work, I dance on the Vanderbilt Dance Team, paint, surf and ski.",
+    "I have been building things for a while: I founded a marine mammal rescue nonprofit that raised $2,500+ and an entrepreneurs club that grew to 30+ members, and I led PR and marketing for Vanderbilt’s Panhellenic Council. Away from work, I paint, surf and ski.",
   ],
   photos: [
-    { file: "dance.jpg", alt: "Avery Zenz performing with the Vanderbilt Dance Team", placeholder: "Dance team", tone: "ink" },
+    { file: "painting.jpg", alt: "One of Avery Zenz's paintings", placeholder: "Painting", tone: "ink" },
     { file: "travel.jpg", alt: "Avery Zenz traveling in Europe", placeholder: "Travel", tone: "blush" },
     { file: "surf.jpg", alt: "Avery Zenz surfing", placeholder: "Surf or ski", tone: "petal" },
   ] as const,
