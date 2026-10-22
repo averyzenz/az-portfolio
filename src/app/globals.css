@@ -59,6 +59,29 @@
     line-height: 1.5;
   }
 
+  /* Text link whose underline draws in from the left on hover or focus. */
+  .link-draw {
+    position: relative;
+    transition: color 200ms;
+  }
+
+  .link-draw::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0.6rem;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 300ms ease-out;
+  }
+
+  .link-draw:hover::after,
+  .link-draw:focus-visible::after {
+    transform: scaleX(1);
+  }
+
   /* Bracketed [placeholder] copy from content.ts. */
   .placeholder-text {
     outline: 1px dashed currentColor;

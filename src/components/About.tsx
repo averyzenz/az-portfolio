@@ -21,13 +21,14 @@ export function About() {
         </div>
         <ul className="grid grid-cols-3 gap-2.5 self-center sm:gap-3.5">
           {about.photos.map((p) => (
-            <li key={p.file} className="relative aspect-[3/4] overflow-hidden">
+            <li key={p.file} className="group relative aspect-[3/4] overflow-hidden">
               <Photo
                 src={imageSrc(p.file)}
                 alt={p.alt}
                 placeholder={p.placeholder}
                 tone={p.tone}
                 labelPosition="bottom"
+                className="transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                 sizes="(min-width: 1024px) 230px, 33vw"
               />
             </li>
