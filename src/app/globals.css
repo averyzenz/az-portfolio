@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ink: #111111;
+  --color-paper: #ffffff;
+  --color-blush: #f4d6dd;
+  --color-petal: #e6b7c3;
+  --color-rose: #8c2f4f;
+  --color-plum: #4d2a35;
+  --color-body: #3b3b3b;
+  --color-mist: #cfcfcf;
+  --color-line-dark: #3a3a3a;
+
+  --font-display: var(--font-bodoni), "Bodoni 72", Didot, Georgia, serif;
+  --font-sans: var(--font-work-sans), system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    --focus: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--color-blush);
+    color: var(--color-ink);
+  }
+
+  [id] {
+    scroll-margin-top: 1.5rem;
+  }
+}
+
+@layer components {
+  /* Dark sections: switch the focus ring to pink so it stays visible. */
+  .on-dark {
+    --focus: var(--color-blush);
+  }
+
+  /* Small uppercase labels. */
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    line-height: 1.5;
+  }
+
+  /* Bracketed [placeholder] copy from content.ts. */
+  .placeholder-text {
+    outline: 1px dashed currentColor;
+    outline-offset: 2px;
+    padding-inline: 0.15em;
+    opacity: 0.85;
+  }
+}
+
+/* Fade-up on scroll. Only hides content when JS runs and motion is allowed. */
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 700ms ease-out,
+      transform 700ms ease-out;
+  }
+
+  [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 450ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

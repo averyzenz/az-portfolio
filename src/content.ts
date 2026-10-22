@@ -1,0 +1,196 @@
+/**
+ * All site copy and data lives here.
+ *
+ * Formatting inside any text string:
+ *   **bold**        renders as semibold text
+ *   [placeholder]   renders with a dashed outline so missing info is obvious.
+ *                   Replace the brackets with real content before launch.
+ *
+ * Images: put files in /public/images using the `file` names below. If a file
+ * exists it is shown automatically; otherwise a palette placeholder is shown.
+ *
+ * PDFs: put files in /public at the `href` paths below.
+ *
+ * House style: no em dashes, no invented numbers.
+ */
+
+export const profile = {
+  name: "Avery Zenz",
+  wordmark: "ZENZ",
+  school: "Vanderbilt University",
+  email: "avery.a.zenz@vanderbilt.edu",
+  linkedin: "https://www.linkedin.com/in/avery-zenz/",
+  resume: "/resume.pdf",
+};
+
+export const seo = {
+  title: "Avery Zenz | Wealth and Asset Management",
+  description:
+    "Avery Zenz is a Vanderbilt senior seeking full-time roles in private credit, equity research and real estate private equity, starting summer 2027.",
+};
+
+export const nav = [
+  { label: "Experience", href: "#experience" },
+  { label: "Research", href: "#research" },
+  { label: "About", href: "#about" },
+];
+
+export const hero = {
+  label: "Wealth and Asset Management · Vanderbilt ’27",
+  firstName: "Avery",
+  lastName: "Zenz",
+  intro:
+    "Seeking full-time roles in **private credit, equity research and real estate private equity**, starting summer 2027.",
+  primaryCta: { label: "Download Resume", href: "/resume.pdf" },
+  secondaryCta: { label: "Read My Research", href: "#research" },
+  photo: {
+    file: "headshot.jpg",
+    alt: "Professional headshot of Avery Zenz",
+    placeholder: "Professional headshot",
+  },
+};
+
+export const focusAreas = [
+  "Private Credit",
+  "Equity Research",
+  "Real Estate PE",
+  "Sector Analysis",
+];
+
+export const statement = {
+  label: "How I think",
+  lead: "I look at businesses the way an owner would,",
+  accent: "because I have built them.",
+};
+
+export const stats = [
+  {
+    value: "4+",
+    label: "alternative funds analyzed across private credit, real estate and direct lending",
+  },
+  {
+    value: "10+",
+    label: "fund pitches and portfolio updates to an investment committee",
+  },
+  {
+    value: "8",
+    label: "equity positions managed in a firm-wide stock picking competition",
+  },
+  {
+    value: "CFA",
+    label: "Institute Investment Foundations Certificate",
+  },
+];
+
+export type Chapter = {
+  num: string;
+  tab: string;
+  title: string;
+  meta: string;
+  body: string;
+  photo: { file: string; alt: string; placeholder: string };
+};
+
+export const experience = {
+  label: "Experience",
+  heading: "The story so far",
+  chapters: [
+    {
+      num: "01",
+      tab: "Validus Capital",
+      title: "Inside the investment committee",
+      meta: "Summer 2026 · Wealth Management Intern",
+      body:
+        "At Validus Capital, I analyzed 4+ alternative investment funds across private credit, real estate and direct lending, evaluating IRR, MOIC and distribution waterfall structures to support investment committee decisions. I presented 10+ weekly fund pitches and portfolio updates, and met senior professionals at 6 asset managers and institutions.",
+      photo: {
+        file: "validus.jpg",
+        alt: "Avery Zenz during her wealth management internship",
+        placeholder: "Internship photo",
+      },
+    },
+    {
+      num: "02",
+      tab: "Equity Portfolio",
+      title: "Reading markets from the top down",
+      meta: "Summer 2026 · Firm-wide Stock Picking Competition",
+      body:
+        "I managed an 8-position diversified equity portfolio in a firm-wide stock picking competition, delivering weekly performance analysis and market outlook briefings to senior investment professionals. [Add result: rank, or return vs. benchmark]",
+      photo: {
+        file: "portfolio.jpg",
+        alt: "Chart of Avery Zenz's stock picking competition portfolio",
+        placeholder: "Portfolio performance chart",
+      },
+    },
+    {
+      num: "03",
+      tab: "Sweet Couture",
+      title: "Building a business from the cost structure up",
+      meta: "2022 to present · Co-Founder",
+      body:
+        "I co-founded a direct-to-consumer bakery and took it from concept to market. I set pricing and go-to-market strategy through cost-structure, competitive and positioning analysis, and built the brand identity, packaging and e-commerce site from scratch. [Add revenue, gross margin and repeat customers]",
+      photo: {
+        file: "sweet-couture.jpg",
+        alt: "Pastries from Sweet Couture, the bakery Avery Zenz co-founded",
+        placeholder: "Sweet Couture product photo",
+      },
+    },
+  ] satisfies Chapter[],
+};
+
+export const research = {
+  label: "Research",
+  heading: "Market notes",
+  intro:
+    "Sector and investment analysis I write on my own time. Each note states the thesis, the numbers behind it, and the risks.",
+  notes: [
+    {
+      type: "Sector Note",
+      date: "[Month 2026]",
+      title: "[Sector: one-line thesis]",
+      summary: "[Two sentences on the opportunity and what drives it.]",
+      href: "/research/sector-note.pdf",
+      linkLabel: "Read the note (PDF)",
+    },
+    {
+      type: "Equity Pitch",
+      date: "[Month 2026]",
+      title: "[Company (Ticker): Buy or Sell on catalyst]",
+      summary: "[Thesis, valuation and result from the stock picking competition.]",
+      href: "/research/equity-pitch.pdf",
+      linkLabel: "Read the note (PDF)",
+    },
+    {
+      type: "Private Markets",
+      date: "[Month 2026]",
+      title: "[Private credit or real estate topic]",
+      summary: "[A short view on a market trend. Public information only.]",
+      href: "/research/private-markets.pdf",
+      linkLabel: "Read the note (PDF)",
+    },
+  ],
+};
+
+export const about = {
+  label: "About",
+  heading: "Off the clock",
+  bio: [
+    "I study Human and Organizational Development with a minor in Business at Vanderbilt, graduating May 2027. I studied business in Barcelona and the business of fashion in Paris, Florence and Milan.",
+    "I have been building things for a while: I founded a marine mammal rescue nonprofit that raised $2,500+ and an entrepreneurs club that grew to 30+ members, and I led PR and marketing for Vanderbilt’s Panhellenic Council. Away from work, I dance on the Vanderbilt Dance Team, paint, surf and ski.",
+  ],
+  photos: [
+    { file: "dance.jpg", alt: "Avery Zenz performing with the Vanderbilt Dance Team", placeholder: "Dance team", tone: "ink" },
+    { file: "travel.jpg", alt: "Avery Zenz traveling in Europe", placeholder: "Travel", tone: "blush" },
+    { file: "surf.jpg", alt: "Avery Zenz surfing", placeholder: "Surf or ski", tone: "petal" },
+  ] as const,
+};
+
+export const contact = {
+  heading: "Let’s",
+  accent: "talk.",
+  line: "Open to full-time roles in wealth and asset management, starting summer 2027.",
+  buttons: {
+    email: "Email Avery",
+    resume: "Download Resume",
+    linkedin: "LinkedIn",
+  },
+};
