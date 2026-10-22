@@ -18,6 +18,26 @@ export function About() {
               <Rich text={para} />
             </p>
           ))}
+          {about.links.length > 0 && (
+            <ul className="mt-2 border-t border-ink/15">
+              {about.links.map((link) => (
+                <li key={link.href} className="border-b border-ink/15 py-4">
+                  <p className="eyebrow text-rose">{link.label}</p>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 inline-block font-display text-[22px] leading-snug font-medium underline-offset-4 hover:text-rose hover:underline"
+                  >
+                    {link.title}
+                    <span aria-hidden="true">&nbsp;↗</span>
+                    <span className="sr-only"> (opens in a new tab)</span>
+                  </a>
+                  <p className="mt-1 text-[14px] text-body">{link.source}</p>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
         <ul className="grid grid-cols-3 gap-2.5 self-center sm:gap-3.5">
           {about.photos.map((p) => (

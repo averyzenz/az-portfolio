@@ -173,8 +173,12 @@ export const toolkit = {
       ],
     },
     {
-      title: "Certifications",
-      items: ["CFA Institute Investment Foundations Certificate", "Digital Marketing Certificate"],
+      title: "Certifications and honors",
+      items: [
+        "CFA Institute Investment Foundations Certificate",
+        "Digital Marketing Certificate",
+        "Vanderbilt Dean’s List",
+      ],
     },
     {
       title: "Tools and languages",
@@ -221,7 +225,17 @@ export const about = {
   heading: "Off the clock",
   bio: [
     "I study Human and Organizational Development with a minor in Business at Vanderbilt, graduating May 2027. I studied business in Barcelona and the business of fashion in Paris, Florence and Milan.",
-    "I have been building things for a while: I founded a marine mammal rescue nonprofit that raised $2,500+ and an entrepreneurs club that grew to 30+ members, and I led PR and marketing for Vanderbilt’s Panhellenic Council. Away from work, I paint, surf and ski. I was also a competitive dancer and danced on the Vanderbilt Dance Team.",
+    "I have been building things for a while: I founded a marine mammal rescue nonprofit that raised $2,500+ and an entrepreneurs club that grew to 30+ members, and I led PR and marketing for Vanderbilt’s Panhellenic Council. I also paint, and turned it into AZ Paintings, my independent art business.",
+    "Away from work, I surf and ski. I was also a competitive dancer and danced on the Vanderbilt Dance Team.",
+  ],
+  // Small list of outside links under the bio. Leave empty to hide it.
+  links: [
+    {
+      label: "Writing",
+      title: "Social Media: Where are the Youth Going?",
+      source: "Two Minds Think Better Than One, 2022",
+      href: "https://twominds.substack.com/p/social-media-where-are-the-youth",
+    },
   ],
   photos: [
     { file: "painting.jpg", alt: "A spread of Avery Zenz's fashion-inspired paintings, including a Vogue cover and pink bows", placeholder: "Painting", tone: "ink" },
