@@ -224,9 +224,9 @@ export const about = {
   label: "About",
   heading: "Off the clock",
   bio: [
-    "I study Human and Organizational Development with a minor in Business at Vanderbilt University, graduating May 2027. I studied business in Barcelona and the business of fashion in Paris, Florence, and Milan.",
+    "I study Human and Organizational Development with a minor in Business at Vanderbilt University, graduating May 2027. I studied Business in Barcelona and the Business of Fashion in Paris, Florence, and Milan.",
     "Outside the classroom, I have founded and led organizations from the ground up: the Pacific Mammal Rescue Project, a nonprofit that raised over $2,500, and the Future Entrepreneurs Club, which grew to more than 30 members. At Vanderbilt, I served as VP of PR and Marketing for the Panhellenic Council. I also started AZ Paintings, an independent art business.",
-    "Away from work, I surf and ski. I was also a competitive dancer and danced on the Vanderbilt Dance Team.",
+    "Away from work, I surf, ski, and read. I was also a competitive dancer and danced on the Vanderbilt Dance Team.",
   ],
   // Small list of outside links under the bio. Leave empty to hide it.
   links: [
