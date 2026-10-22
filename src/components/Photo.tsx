@@ -17,6 +17,8 @@ type Props = {
   priority?: boolean;
   className?: string;
   labelPosition?: "center" | "bottom";
+  /** CSS object-position, e.g. "50% 30%", to keep the subject in frame when cropped. */
+  position?: string;
 };
 
 /**
@@ -33,6 +35,7 @@ export function Photo({
   priority,
   className = "",
   labelPosition = "center",
+  position,
 }: Props) {
   if (src) {
     return (
@@ -43,6 +46,7 @@ export function Photo({
         sizes={sizes}
         priority={priority}
         className={`object-cover ${className}`}
+        style={position ? { objectPosition: position } : undefined}
       />
     );
   }

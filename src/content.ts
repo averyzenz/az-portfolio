@@ -93,7 +93,8 @@ export type Chapter = {
   title: string;
   meta: string;
   body: string;
-  photo: { file: string; alt: string; placeholder: string };
+  /** `position` is an optional focal point for cropping, e.g. "50% 30%". */
+  photo: { file: string; alt: string; placeholder: string; position?: string };
 };
 
 export const experience = {
@@ -109,8 +110,9 @@ export const experience = {
         "At Validus Capital, I analyzed 4+ alternative investment funds across private credit, real estate and direct lending, evaluating IRR, MOIC and distribution waterfall structures to support investment committee decisions. I presented 10+ weekly fund pitches and portfolio updates, and met senior professionals at 6 asset managers and institutions.",
       photo: {
         file: "validus.jpg",
-        alt: "Avery Zenz during her wealth management internship",
+        alt: "Avery Zenz with members of the Validus Capital team in front of the firm's sign",
         placeholder: "Internship photo",
+        position: "50% 36%",
       },
     },
     {

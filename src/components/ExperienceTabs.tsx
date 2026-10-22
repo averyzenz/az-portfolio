@@ -94,6 +94,7 @@ export function ExperienceTabs({ heading, label, chapters }: Props) {
                 src={c.src}
                 alt={c.photo.alt}
                 placeholder={c.photo.placeholder}
+                position={c.photo.position}
                 tone="blush"
                 sizes="(min-width: 1024px) 50vw, 100vw"
               />
