@@ -12,3 +12,7 @@ next-env.d.ts
 .vercel
 .env*.local
 .DS_Store
+
+# private notes
+TODO.md
+AGENTS.md
