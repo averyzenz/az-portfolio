@@ -37,7 +37,7 @@ export function ExperienceTabs({ heading, label, chapters }: Props) {
 
   return (
     <div className="flex flex-col gap-10">
-      <div data-reveal className="flex flex-wrap items-end justify-between gap-6">
+      <div className="flex flex-wrap items-end justify-between gap-6">
         <div>
           <p className="eyebrow text-rose">{label}</p>
           <h2
@@ -87,7 +87,7 @@ export function ExperienceTabs({ heading, label, chapters }: Props) {
             <div
               key={c.num}
               aria-hidden={i !== active}
-              className={`absolute inset-0 transition-opacity duration-500 ease-out ${
+              className={`absolute inset-0 ${
                 i === active ? "opacity-100" : "opacity-0"
               }`}
             >
@@ -106,7 +106,7 @@ export function ExperienceTabs({ heading, label, chapters }: Props) {
             </div>
           ))}
         </div>
-        <div key={current.num} className="animate-fade-in flex min-w-0 flex-col justify-center gap-[18px]">
+        <div className="flex min-w-0 flex-col justify-center gap-[18px]">
           <p aria-hidden="true" className="font-display text-[clamp(64px,7vw,88px)] leading-none text-rose">
             {current.num}
           </p>

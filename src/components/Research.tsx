@@ -12,7 +12,7 @@ export function Research() {
       className="on-dark border-b border-line-dark bg-ink text-paper"
     >
       <Container className="flex flex-col gap-10 py-20 sm:py-[100px]">
-        <div data-reveal className="flex flex-wrap items-end justify-between gap-5">
+        <div className="flex flex-wrap items-end justify-between gap-5">
           <div>
             <p className="eyebrow text-blush">{research.label}</p>
             <h2
@@ -26,7 +26,7 @@ export function Research() {
         </div>
         <ul className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {research.notes.map((note) => (
-            <li key={note.href} data-reveal>
+            <li key={note.href}>
               <article className="flex h-full min-h-[280px] flex-col gap-3.5 border border-line-dark p-6 sm:p-7">
                 <div className="flex justify-between gap-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-blush">
                   <span>{note.type}</span>

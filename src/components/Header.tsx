@@ -19,7 +19,7 @@ export function Header() {
           <ul className="col-span-2 row-start-2 flex gap-6 text-[12px] font-semibold uppercase tracking-[0.14em] sm:gap-7 sm:text-[13px]">
             {links.map((item) => (
               <li key={item.href}>
-                <a href={item.href} className="link-draw inline-flex min-h-11 items-center hover:text-rose">
+                <a href={item.href} className="inline-flex min-h-11 items-center hover:text-rose">
                   {item.label}
                 </a>
               </li>

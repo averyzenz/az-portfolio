@@ -8,7 +8,6 @@ export function Footer() {
     <footer id="contact" className="on-dark bg-ink text-paper">
       <Container className="flex flex-col gap-9 pt-20 pb-12 sm:pt-24 sm:pb-[52px]">
         <h2
-          data-reveal
           className="font-display font-medium leading-none tracking-[-0.02em] text-[clamp(48px,6vw,72px)]"
         >
           {contact.heading} <em className="font-medium text-blush">{contact.accent}</em>
@@ -31,7 +30,7 @@ export function Footer() {
           <span>
             {profile.name} · {profile.school}
           </span>
-          <a href={`mailto:${profile.email}`} className="link-draw inline-flex min-h-11 items-center hover:text-blush">
+          <a href={`mailto:${profile.email}`} className="inline-flex min-h-11 items-center hover:text-blush">
             {profile.email}
           </a>
         </div>

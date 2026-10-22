@@ -5,7 +5,6 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Research } from "@/components/Research";
-import { RevealObserver } from "@/components/RevealObserver";
 import { Statement } from "@/components/Statement";
 import { Stats } from "@/components/Stats";
 import { Toolkit } from "@/components/Toolkit";
@@ -25,7 +24,6 @@ export default function Home() {
         <About />
       </main>
       <Footer />
-      <RevealObserver />
     </>
   );
 }

@@ -5,7 +5,7 @@ export function Toolkit() {
   return (
     <section id="toolkit" aria-labelledby="toolkit-heading" className="on-dark bg-ink text-paper">
       <Container className="flex flex-col gap-12 py-20 sm:py-24">
-        <div data-reveal>
+        <div>
           <p className="eyebrow text-blush">{toolkit.label}</p>
           <h2
             id="toolkit-heading"
@@ -16,7 +16,7 @@ export function Toolkit() {
         </div>
         <div className="grid gap-10 md:grid-cols-3 md:gap-8 lg:gap-12">
           {toolkit.groups.map((group) => (
-            <div key={group.title} data-reveal className="border-t border-line-dark pt-5">
+            <div key={group.title} className="border-t border-line-dark pt-5">
               <h3 className="eyebrow text-blush">{group.title}</h3>
               <ul className="mt-4">
                 {group.items.map((item) => (
