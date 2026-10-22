@@ -1,5 +1,5 @@
 import { hero } from "@/content";
-import { hasResearch, hasResume, imageSrc } from "@/lib/files";
+import { hasResume, imageSrc } from "@/lib/files";
 import { ButtonLink } from "./ButtonLink";
 import { Container } from "./Container";
 import { Photo } from "./Photo";
@@ -7,7 +7,7 @@ import { Photo } from "./Photo";
 export function Hero() {
   const resume = hasResume();
   const primary = resume ? hero.primaryCta : hero.primaryCtaFallback;
-  const secondary = hasResearch() ? hero.secondaryCta : hero.secondaryCtaFallback;
+  const secondary = hero.secondaryCta;
   return (
     <section aria-labelledby="hero-name">
       <Container className="grid pt-2 lg:grid-cols-[minmax(0,1.45fr)_minmax(0,1fr)]">

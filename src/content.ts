@@ -43,9 +43,7 @@ export const hero = {
   // Shown when /public/resume.pdf exists, otherwise `primaryCtaFallback`.
   primaryCta: { label: "View Resume", href: "/resume.pdf" },
   primaryCtaFallback: { label: "Get in Touch", href: "#contact" },
-  // Shown when at least one writing entry exists, otherwise `secondaryCtaFallback`.
-  secondaryCta: { label: "Read My Writing", href: "#research" },
-  secondaryCtaFallback: { label: "See My Experience", href: "#experience" },
+  secondaryCta: { label: "See My Experience", href: "#experience" },
   photo: {
     file: "headshot.jpg",
     alt: "Professional headshot of Avery Zenz",
@@ -107,8 +105,8 @@ export type Portfolio = {
 };
 
 export const experience = {
-  label: "Experience",
-  heading: "The story so far",
+  label: "Career",
+  heading: "Professional experience",
   chapters: [
     {
       num: "01",

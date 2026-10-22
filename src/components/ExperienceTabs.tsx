@@ -36,7 +36,7 @@ export function ExperienceTabs({ heading, label, chapters }: Props) {
   }
 
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-8">
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div>
           <p className="eyebrow text-rose">{label}</p>
@@ -47,32 +47,43 @@ export function ExperienceTabs({ heading, label, chapters }: Props) {
             {heading}
           </h2>
         </div>
-        <div role="tablist" aria-label="Experience chapters" className="flex flex-wrap gap-2">
-          {chapters.map((c, i) => {
-            const selected = i === active;
-            return (
-              <button
-                key={c.num}
-                ref={(el) => {
-                  tabs.current[i] = el;
-                }}
-                id={`tab-${c.num}`}
-                role="tab"
-                type="button"
-                aria-selected={selected}
-                aria-controls={`panel-${c.num}`}
-                tabIndex={selected ? 0 : -1}
-                onClick={() => setActive(i)}
-                onKeyDown={onKeyDown}
-                className={`min-h-11 cursor-pointer border-[1.5px] border-ink px-[18px] py-3 text-[13px] font-semibold uppercase tracking-[0.1em] transition-colors duration-200 ${
-                  selected ? "bg-ink text-paper" : "bg-paper text-ink hover:bg-blush"
-                }`}
+      </div>
+
+      <div
+        role="tablist"
+        aria-label="Experience chapters"
+        className="grid border-[1.5px] border-ink"
+        style={{ gridTemplateColumns: `repeat(${chapters.length}, minmax(0, 1fr))` }}
+      >
+        {chapters.map((c, i) => {
+          const selected = i === active;
+          return (
+            <button
+              key={c.num}
+              ref={(el) => {
+                tabs.current[i] = el;
+              }}
+              id={`tab-${c.num}`}
+              role="tab"
+              type="button"
+              aria-selected={selected}
+              aria-controls={`panel-${c.num}`}
+              tabIndex={selected ? 0 : -1}
+              onClick={() => setActive(i)}
+              onKeyDown={onKeyDown}
+              className={`flex min-h-11 cursor-pointer flex-col items-start gap-1 px-3 py-3 text-left transition-colors duration-200 sm:flex-row sm:items-baseline sm:gap-3 sm:px-5 sm:py-4 ${
+                i > 0 ? "border-l-[1.5px] border-ink" : ""
+              } ${selected ? "bg-ink text-paper" : "bg-paper text-ink hover:bg-blush"}`}
+            >
+              <span
+                className={`font-display text-[22px] leading-none sm:text-[28px] ${selected ? "text-blush" : "text-rose"}`}
               >
-                {c.num} {c.tab}
-              </button>
-            );
-          })}
-        </div>
+                {c.num}
+              </span>
+              <span className="text-[11px] font-semibold uppercase tracking-[0.1em] sm:text-[13px]">{c.tab}</span>
+            </button>
+          );
+        })}
       </div>
 
       <div
@@ -80,7 +91,7 @@ export function ExperienceTabs({ heading, label, chapters }: Props) {
         role="tabpanel"
         aria-labelledby={`tab-${current.num}`}
         tabIndex={0}
-        className="grid gap-10 border-t border-ink pt-10 lg:grid-cols-2 lg:gap-12"
+        className="grid gap-10 pt-2 lg:grid-cols-2 lg:gap-12"
       >
         <div className="relative h-[300px] overflow-hidden bg-blush md:h-auto md:aspect-[16/9] lg:aspect-auto lg:min-h-[440px]">
           {chapters.map((c, i) => (
