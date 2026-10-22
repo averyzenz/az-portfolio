@@ -59,6 +59,29 @@
     line-height: 1.5;
   }
 
+  /* Text link whose underline draws in from the left on hover or focus. */
+  .link-draw {
+    position: relative;
+    transition: color 200ms;
+  }
+
+  .link-draw::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0.6rem;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 300ms ease-out;
+  }
+
+  .link-draw:hover::after,
+  .link-draw:focus-visible::after {
+    transform: scaleX(1);
+  }
+
   /* Bracketed [placeholder] copy from content.ts. */
   .placeholder-text {
     outline: 1px dashed currentColor;
@@ -95,6 +118,65 @@
 
 .animate-fade-in {
   animation: fade-in 450ms ease-out both;
+}
+
+/* Hero entrance: plays once on load. Reduced motion collapses it to an instant. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.35em);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    clip-path: inset(100% 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.hero-rise {
+  animation: rise 900ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.hero-fade {
+  animation: fade-up 700ms ease-out both;
+}
+
+.hero-reveal {
+  animation: reveal-up 1100ms cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+
+/* Ticker tape: the track holds the list twice and slides by half its width. */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 45s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {

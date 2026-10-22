@@ -8,6 +8,7 @@ import { Research } from "@/components/Research";
 import { RevealObserver } from "@/components/RevealObserver";
 import { Statement } from "@/components/Statement";
 import { Stats } from "@/components/Stats";
+import { Toolkit } from "@/components/Toolkit";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Statement />
         <Stats />
         <Experience />
+        <Toolkit />
         <Research />
         <About />
       </main>

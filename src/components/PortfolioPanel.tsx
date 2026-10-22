@@ -5,7 +5,7 @@ import type { Portfolio } from "@/content";
 const ramp = ["#4D1A2C", "#8C2F4F", "#C46A88"];
 
 /** Typographic stand-in for a photo: allocation bar plus the list of holdings. */
-export function PortfolioPanel({ portfolio }: { portfolio: Portfolio }) {
+export function PortfolioPanel({ portfolio, active = true }: { portfolio: Portfolio; active?: boolean }) {
   const { label, holdings, allocation } = portfolio;
   return (
     <figure className="absolute inset-0 flex flex-col justify-between gap-4 border border-ink bg-paper p-5 sm:p-8">
@@ -21,8 +21,14 @@ export function PortfolioPanel({ portfolio }: { portfolio: Portfolio }) {
           {allocation.map((slice, i) => (
             <div
               key={slice.label}
-              className="flex items-center px-2 text-[13px] font-semibold text-paper sm:px-3 sm:text-[15px]"
-              style={{ width: `${slice.percent}%`, background: ramp[i] }}
+              className="flex items-center overflow-hidden px-2 text-[13px] font-semibold whitespace-nowrap text-paper transition-[width] duration-700 ease-out sm:px-3 sm:text-[15px]"
+              style={{
+                // Grows into place each time the tab is opened.
+                width: active ? `${slice.percent}%` : "0%",
+                padding: active ? undefined : 0,
+                transitionDelay: active ? `${200 + i * 120}ms` : "0ms",
+                background: ramp[i],
+              }}
             >
               {slice.percent}%
             </div>

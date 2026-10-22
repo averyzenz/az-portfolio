@@ -40,8 +40,6 @@ export const hero = {
   label: "Wealth and Asset Management · Vanderbilt ’27",
   firstName: "Avery",
   lastName: "Zenz",
-  intro:
-    "Seeking full-time roles in **private credit, equity research and real estate private equity**, starting summer 2027.",
   // Shown when /public/resume.pdf exists, otherwise `primaryCtaFallback`.
   primaryCta: { label: "Download Resume", href: "/resume.pdf" },
   primaryCtaFallback: { label: "Get in Touch", href: "#contact" },
@@ -56,6 +54,8 @@ export const hero = {
 };
 
 export const focusAreas = [
+  "Wealth Management",
+  "Asset Management",
   "Private Credit",
   "Equity Research",
   "Real Estate PE",
@@ -155,6 +155,32 @@ export const experience = {
       },
     },
   ] satisfies Chapter[],
+};
+
+/** Skills from the resume only. Add a tool here once she actually uses it. */
+export const toolkit = {
+  label: "Toolkit",
+  heading: "What I work with",
+  groups: [
+    {
+      title: "Investment analysis",
+      items: [
+        "Alternative investments: private credit, real estate, direct lending",
+        "Fund performance: IRR, MOIC, distribution waterfalls",
+        "Portfolio management",
+        "Market and sector research",
+        "Equity analysis",
+      ],
+    },
+    {
+      title: "Certifications",
+      items: ["CFA Institute Investment Foundations Certificate", "Digital Marketing Certificate"],
+    },
+    {
+      title: "Tools and languages",
+      items: ["Microsoft Excel", "Microsoft PowerPoint", "Spanish (conversational)"],
+    },
+  ],
 };
 
 export type ResearchNote = {

@@ -6,7 +6,11 @@ import { Rich } from "./Rich";
 export function Research() {
   if (!hasResearch()) return null;
   return (
-    <section id="research" aria-labelledby="research-heading" className="on-dark bg-ink text-paper">
+    <section
+      id="research"
+      aria-labelledby="research-heading"
+      className="on-dark border-b border-line-dark bg-ink text-paper"
+    >
       <Container className="flex flex-col gap-10 py-20 sm:py-[100px]">
         <div data-reveal className="flex flex-wrap items-end justify-between gap-5">
           <div>

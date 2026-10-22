@@ -92,7 +92,7 @@ export function ExperienceTabs({ heading, label, chapters }: Props) {
               }`}
             >
               {c.portfolio ? (
-                <PortfolioPanel portfolio={c.portfolio} />
+                <PortfolioPanel portfolio={c.portfolio} active={i === active} />
               ) : c.photo ? (
                 <Photo
                   src={c.src}

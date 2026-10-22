@@ -31,7 +31,7 @@ export function Footer() {
           <span>
             {profile.name} · {profile.school}
           </span>
-          <a href={`mailto:${profile.email}`} className="hover:text-blush">
+          <a href={`mailto:${profile.email}`} className="link-draw inline-flex min-h-11 items-center hover:text-blush">
             {profile.email}
           </a>
         </div>
