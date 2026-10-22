@@ -26,7 +26,7 @@ All copy lives in **`src/content.ts`**: hero, focus band, statement, stats, expe
 Two formatting shortcuts work in any string:
 
 - `**bold**` renders as semibold text (used in the hero line).
-- `[anything in brackets]` renders with a dashed outline so missing info is obvious. Replace these before launch. `TODO.md` lists every one.
+- `[anything in brackets]` renders with a dashed outline, for marking missing info while drafting.
 
 House style: no em dashes, and no numbers that aren't on the resume.
 

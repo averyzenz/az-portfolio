@@ -185,8 +185,8 @@ export const about = {
     "I have been building things for a while: I founded a marine mammal rescue nonprofit that raised $2,500+ and an entrepreneurs club that grew to 30+ members, and I led PR and marketing for Vanderbilt’s Panhellenic Council. Away from work, I paint, surf and ski.",
   ],
   photos: [
-    { file: "painting.jpg", alt: "One of Avery Zenz's paintings", placeholder: "Painting", tone: "ink" },
-    { file: "travel.jpg", alt: "Avery Zenz traveling in Europe", placeholder: "Travel", tone: "blush" },
+    { file: "painting.jpg", alt: "A spread of Avery Zenz's fashion-inspired paintings, including a Vogue cover and pink bows", placeholder: "Painting", tone: "ink" },
+    { file: "travel.jpg", alt: "Avery Zenz tandem paragliding above a mountain town and lake", placeholder: "Travel", tone: "blush" },
     { file: "surf.jpg", alt: "Avery Zenz surfing", placeholder: "Surf or ski", tone: "petal" },
   ] as const,
 };
