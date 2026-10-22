@@ -94,7 +94,16 @@ export type Chapter = {
   meta: string;
   body: string;
   /** `position` is an optional focal point for cropping, e.g. "50% 30%". */
-  photo: { file: string; alt: string; placeholder: string; position?: string };
+  photo?: { file: string; alt: string; placeholder: string; position?: string };
+  /** Shown instead of a photo: a designed panel of holdings and allocation. */
+  portfolio?: Portfolio;
+};
+
+export type Portfolio = {
+  label: string;
+  holdings: string[];
+  /** Largest first. Percentages should add up to 100. */
+  allocation: { label: string; percent: number }[];
 };
 
 export const experience = {
@@ -122,10 +131,14 @@ export const experience = {
       meta: "Summer 2026 · Firm-wide Stock Picking Competition",
       body:
         "I managed an 8-position diversified equity portfolio in a firm-wide stock picking competition, delivering weekly performance analysis and market outlook briefings to senior investment professionals.",
-      photo: {
-        file: "portfolio.jpg",
-        alt: "Chart of Avery Zenz's stock picking competition portfolio",
-        placeholder: "Portfolio performance chart",
+      portfolio: {
+        label: "Competition portfolio",
+        holdings: ["AAPL", "NVDA", "ABBV", "TSLA", "JOBY", "VTWO", "ACWX", "GS"],
+        allocation: [
+          { label: "US large cap", percent: 60 },
+          { label: "US small cap", percent: 20 },
+          { label: "International", percent: 20 },
+        ],
       },
     },
     {

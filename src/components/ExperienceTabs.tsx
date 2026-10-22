@@ -3,6 +3,7 @@
 import { useRef, useState, type KeyboardEvent } from "react";
 import type { Chapter } from "@/content";
 import { Photo } from "./Photo";
+import { PortfolioPanel } from "./PortfolioPanel";
 import { Rich } from "./Rich";
 
 type Props = {
@@ -81,7 +82,7 @@ export function ExperienceTabs({ heading, label, chapters }: Props) {
         tabIndex={0}
         className="grid gap-10 border-t border-ink pt-10 lg:grid-cols-2 lg:gap-12"
       >
-        <div className="relative aspect-[4/3] overflow-hidden md:aspect-[16/9] bg-blush lg:aspect-auto lg:min-h-[440px]">
+        <div className="relative h-[300px] overflow-hidden bg-blush md:h-auto md:aspect-[16/9] lg:aspect-auto lg:min-h-[440px]">
           {chapters.map((c, i) => (
             <div
               key={c.num}
@@ -90,14 +91,18 @@ export function ExperienceTabs({ heading, label, chapters }: Props) {
                 i === active ? "opacity-100" : "opacity-0"
               }`}
             >
-              <Photo
-                src={c.src}
-                alt={c.photo.alt}
-                placeholder={c.photo.placeholder}
-                position={c.photo.position}
-                tone="blush"
-                sizes="(min-width: 1024px) 50vw, 100vw"
-              />
+              {c.portfolio ? (
+                <PortfolioPanel portfolio={c.portfolio} />
+              ) : c.photo ? (
+                <Photo
+                  src={c.src}
+                  alt={c.photo.alt}
+                  placeholder={c.photo.placeholder}
+                  position={c.photo.position}
+                  tone="blush"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                />
+              ) : null}
             </div>
           ))}
         </div>

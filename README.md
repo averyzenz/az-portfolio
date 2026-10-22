@@ -36,13 +36,14 @@ Drop JPGs into `public/images/` with these exact names. Each one replaces its pl
 
 | File | Where it appears | Suggested shape |
 | --- | --- | --- |
-| `headshot.jpg` | Hero, right panel (added) | Portrait, about 4:5, at least 900px wide |
+| `headshot.jpg` | Hero, right panel | Portrait, about 4:5, at least 900px wide |
 | `validus.jpg` | Experience tab 01 | Landscape, about 4:3, at least 1200px wide |
-| `portfolio.jpg` | Experience tab 02 (a clean chart works well) | Landscape, about 4:3 |
 | `sweet-couture.jpg` | Experience tab 03 | Landscape, about 4:3 |
-| `painting.jpg`, `travel.jpg`, `surf.jpg` | About grid | Portrait, about 3:4 |
+| `painting.jpg`, `travel.jpg`, `dance.jpg` | About grid | Portrait, about 3:4 |
 
-Images are cropped to fill their frames, so keep the subject near the center. To use a different filename, change the `file` value in `src/content.ts`. Update the matching `alt` text there too if the photo differs from its description.
+All of these are in place. To replace one, overwrite the file with the same name. Images are cropped to fill their frames, so keep the subject near the center; if a crop cuts off something important, set `position` (a focal point such as `"50% 30%"`) on that photo in `src/content.ts`. To use a different filename, change the `file` value there, and update the matching `alt` text if the photo differs from its description.
+
+Experience tab 02 shows a designed panel instead of a photo: the competition holdings and allocation, from the `portfolio` entry in `src/content.ts`. Edit the tickers or percentages there.
 
 ## Add the resume
 

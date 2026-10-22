@@ -4,7 +4,7 @@ import { Container } from "./Container";
 import { ExperienceTabs } from "./ExperienceTabs";
 
 export function Experience() {
-  const chapters = experience.chapters.map((c) => ({ ...c, src: imageSrc(c.photo.file) }));
+  const chapters = experience.chapters.map((c) => ({ ...c, src: c.photo ? imageSrc(c.photo.file) : null }));
   return (
     <section id="experience" aria-labelledby="experience-heading">
       <Container className="py-20 sm:py-[100px]">
