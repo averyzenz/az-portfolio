@@ -18,7 +18,7 @@ export function Footer() {
             {contact.buttons.email}
           </ButtonLink>
           {hasResume() && (
-            <ButtonLink href={profile.resume} target="_blank" rel="noopener" variant="outline-light">
+            <ButtonLink href={profile.resume} download="Avery-Zenz-Resume.pdf" variant="outline-light">
               {contact.buttons.resume}
             </ButtonLink>
           )}
@@ -30,7 +30,7 @@ export function Footer() {
           <span>
             {profile.name} · {profile.school}
           </span>
-          <a href={`mailto:${profile.email}`} className="inline-flex min-h-11 items-center hover:text-blush">
+          <a href={`mailto:${profile.email}`} className="link-draw inline-flex min-h-11 items-center hover:text-blush">
             {profile.email}
           </a>
         </div>

@@ -41,7 +41,7 @@ export const hero = {
   firstName: "Avery",
   lastName: "Zenz",
   // Shown when /public/resume.pdf exists, otherwise `primaryCtaFallback`.
-  primaryCta: { label: "Download Resume", href: "/resume.pdf" },
+  primaryCta: { label: "View Resume", href: "/resume.pdf" },
   primaryCtaFallback: { label: "Get in Touch", href: "#contact" },
   // Shown when at least one research note exists, otherwise `secondaryCtaFallback`.
   secondaryCta: { label: "Read My Research", href: "#research" },

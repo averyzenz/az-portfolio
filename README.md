@@ -45,9 +45,11 @@ All of these are in place. To replace one, overwrite the file with the same name
 
 Experience tab 02 shows a designed panel instead of a photo: the competition holdings and allocation, from the `portfolio` entry in `src/content.ts`. Edit the tickers or percentages there.
 
-## Add the resume
+## Update the resume
 
-Put the PDF at `public/resume.pdf`. Until it exists, the site hides the "Download Resume" buttons: the header button reads "Contact" and the hero button reads "Get in Touch", both linking to the footer. Once the file is there, they switch to resume downloads on the next build. Before uploading, check the PDF has no phone number or home address, since it will be publicly downloadable.
+The resume lives at `public/resume.pdf`. The header "Resume" and hero "View Resume" buttons open it in a new tab; the footer "Download Resume" button saves it as `Avery-Zenz-Resume.pdf`. To update it, replace the file with the same name.
+
+The public copy must not include her phone number or street address. Export a web version from Word with only "Newport Beach, CA | email" in the contact line. Deleting the text in Word is enough; don't just cover it with a white box in a PDF editor, since covered text can still be copied out. If the file is ever removed, the site hides the resume buttons and points them to the contact section instead.
 
 ## Add research notes
 
