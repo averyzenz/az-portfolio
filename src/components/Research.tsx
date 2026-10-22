@@ -1,8 +1,10 @@
 import { research } from "@/content";
+import { hasResearch } from "@/lib/files";
 import { Container } from "./Container";
 import { Rich } from "./Rich";
 
 export function Research() {
+  if (!hasResearch()) return null;
   return (
     <section id="research" aria-labelledby="research-heading" className="on-dark bg-ink text-paper">
       <Container className="flex flex-col gap-10 py-20 sm:py-[100px]">

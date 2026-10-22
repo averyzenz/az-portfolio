@@ -44,16 +44,13 @@ Drop JPGs into `public/images/` with these exact names. Each one replaces its pl
 
 Images are cropped to fill their frames, so keep the subject near the center. To use a different filename, change the `file` value in `src/content.ts`. Update the matching `alt` text there too if the photo differs from its description.
 
-## Swap in PDFs
+## Add the resume
 
-Replace these placeholder files and keep the same names:
+Put the PDF at `public/resume.pdf`. Until it exists, the site hides the "Download Resume" buttons: the header button reads "Contact" and the hero button reads "Get in Touch", both linking to the footer. Once the file is there, they switch to resume downloads on the next build. Before uploading, check the PDF has no phone number or home address, since it will be publicly downloadable.
 
-- `public/resume.pdf`: used by the header, hero and footer buttons
-- `public/research/sector-note.pdf`
-- `public/research/equity-pitch.pdf`
-- `public/research/private-markets.pdf`
+## Add research notes
 
-To rename a PDF, update its `href` in `src/content.ts`. Research notes should use only public information, never confidential Validus fund names or figures. Before uploading, check that the resume PDF has no phone number or home address, since it will be publicly downloadable.
+The Research section, its nav link and the "Read My Research" button stay hidden until `research.notes` in `src/content.ts` has at least one entry. To add a note, put the PDF in `public/research/` and copy the example entry from the comment above `notes`. Use only public information, never confidential Validus fund names or figures.
 
 ## Project layout
 
@@ -69,12 +66,12 @@ src/
     opengraph-image.tsx social share image
     sitemap.ts, robots.ts
   components/           one file per section, plus Photo, Rich, ButtonLink
-  lib/                  site URL, image lookup, OG fonts
+  lib/                  site URL, file checks (photos, resume, research), OG fonts
   assets/fonts/         static Bodoni Moda and Work Sans used by the OG image and favicon
 public/
   images/               photos
-  research/             research PDFs
-  resume.pdf
+  research/             research PDFs (add when ready)
+  resume.pdf            (add when ready)
 design/design-reference.html   approved static mockup (not shipped)
 ```
 

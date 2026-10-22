@@ -1,4 +1,5 @@
 import { contact, profile } from "@/content";
+import { hasResume } from "@/lib/files";
 import { ButtonLink } from "./ButtonLink";
 import { Container } from "./Container";
 
@@ -17,9 +18,11 @@ export function Footer() {
           <ButtonLink href={`mailto:${profile.email}`} variant="solid-light">
             {contact.buttons.email}
           </ButtonLink>
-          <ButtonLink href={profile.resume} target="_blank" rel="noopener" variant="outline-light">
-            {contact.buttons.resume}
-          </ButtonLink>
+          {hasResume() && (
+            <ButtonLink href={profile.resume} target="_blank" rel="noopener" variant="outline-light">
+              {contact.buttons.resume}
+            </ButtonLink>
+          )}
           <ButtonLink href={profile.linkedin} target="_blank" rel="noopener noreferrer" variant="outline-light">
             {contact.buttons.linkedin}
           </ButtonLink>

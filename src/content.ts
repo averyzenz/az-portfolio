@@ -9,7 +9,8 @@
  * Images: put files in /public/images using the `file` names below. If a file
  * exists it is shown automatically; otherwise a palette placeholder is shown.
  *
- * PDFs: put files in /public at the `href` paths below.
+ * Resume: drop the PDF at /public/resume.pdf. Until it exists, resume buttons
+ * are hidden and the header button links to the contact section instead.
  *
  * House style: no em dashes, no invented numbers.
  */
@@ -41,8 +42,12 @@ export const hero = {
   lastName: "Zenz",
   intro:
     "Seeking full-time roles in **private credit, equity research and real estate private equity**, starting summer 2027.",
+  // Shown when /public/resume.pdf exists, otherwise `primaryCtaFallback`.
   primaryCta: { label: "Download Resume", href: "/resume.pdf" },
+  primaryCtaFallback: { label: "Get in Touch", href: "#contact" },
+  // Shown when at least one research note exists, otherwise `secondaryCtaFallback`.
   secondaryCta: { label: "Read My Research", href: "#research" },
+  secondaryCtaFallback: { label: "See My Experience", href: "#experience" },
   photo: {
     file: "headshot.jpg",
     alt: "Professional headshot of Avery Zenz",
@@ -114,7 +119,7 @@ export const experience = {
       title: "Reading markets from the top down",
       meta: "Summer 2026 · Firm-wide Stock Picking Competition",
       body:
-        "I managed an 8-position diversified equity portfolio in a firm-wide stock picking competition, delivering weekly performance analysis and market outlook briefings to senior investment professionals. [Add result: rank, or return vs. benchmark]",
+        "I managed an 8-position diversified equity portfolio in a firm-wide stock picking competition, delivering weekly performance analysis and market outlook briefings to senior investment professionals.",
       photo: {
         file: "portfolio.jpg",
         alt: "Chart of Avery Zenz's stock picking competition portfolio",
@@ -127,7 +132,7 @@ export const experience = {
       title: "Building a business from the cost structure up",
       meta: "2022 to present · Co-Founder",
       body:
-        "I co-founded a direct-to-consumer bakery and took it from concept to market. I set pricing and go-to-market strategy through cost-structure, competitive and positioning analysis, and built the brand identity, packaging and e-commerce site from scratch. [Add revenue, gross margin and repeat customers]",
+        "I co-founded a direct-to-consumer bakery and took it from concept to market. I set pricing and go-to-market strategy through cost-structure, competitive and positioning analysis, built the brand identity, packaging and e-commerce site from scratch, and grew our social following organically.",
       photo: {
         file: "sweet-couture.jpg",
         alt: "Pastries from Sweet Couture, the bakery Avery Zenz co-founded",
@@ -137,37 +142,37 @@ export const experience = {
   ] satisfies Chapter[],
 };
 
+export type ResearchNote = {
+  type: string;
+  date: string;
+  title: string;
+  summary: string;
+  href: string;
+  linkLabel: string;
+};
+
 export const research = {
   label: "Research",
   heading: "Market notes",
   intro:
     "Sector and investment analysis I write on my own time. Each note states the thesis, the numbers behind it, and the risks.",
-  notes: [
-    {
-      type: "Sector Note",
-      date: "[Month 2026]",
-      title: "[Sector: one-line thesis]",
-      summary: "[Two sentences on the opportunity and what drives it.]",
-      href: "/research/sector-note.pdf",
-      linkLabel: "Read the note (PDF)",
-    },
-    {
-      type: "Equity Pitch",
-      date: "[Month 2026]",
-      title: "[Company (Ticker): Buy or Sell on catalyst]",
-      summary: "[Thesis, valuation and result from the stock picking competition.]",
-      href: "/research/equity-pitch.pdf",
-      linkLabel: "Read the note (PDF)",
-    },
-    {
-      type: "Private Markets",
-      date: "[Month 2026]",
-      title: "[Private credit or real estate topic]",
-      summary: "[A short view on a market trend. Public information only.]",
-      href: "/research/private-markets.pdf",
-      linkLabel: "Read the note (PDF)",
-    },
-  ],
+  /**
+   * The Research section, its nav link and the "Read My Research" button only
+   * appear once this list has at least one note. Put each PDF in
+   * /public/research/ and add an entry like:
+   *
+   * {
+   *   type: "Sector Note",              // or "Equity Pitch", "Private Markets"
+   *   date: "November 2026",
+   *   title: "Data center REITs: power is the new land",
+   *   summary: "Two sentences on the thesis and what drives it.",
+   *   href: "/research/sector-note.pdf",
+   *   linkLabel: "Read the note (PDF)",
+   * },
+   *
+   * Public information only: no confidential Validus fund names or figures.
+   */
+  notes: [] as ResearchNote[],
 };
 
 export const about = {

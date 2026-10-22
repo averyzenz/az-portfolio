@@ -1,5 +1,5 @@
 import { about } from "@/content";
-import { imageSrc } from "@/lib/images";
+import { imageSrc } from "@/lib/files";
 import { Container } from "./Container";
 import { Photo } from "./Photo";
 import { Rich } from "./Rich";

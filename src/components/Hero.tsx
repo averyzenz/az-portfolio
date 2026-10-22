@@ -1,11 +1,14 @@
 import { hero } from "@/content";
-import { imageSrc } from "@/lib/images";
+import { hasResearch, hasResume, imageSrc } from "@/lib/files";
 import { ButtonLink } from "./ButtonLink";
 import { Container } from "./Container";
 import { Photo } from "./Photo";
 import { Rich } from "./Rich";
 
 export function Hero() {
+  const resume = hasResume();
+  const primary = resume ? hero.primaryCta : hero.primaryCtaFallback;
+  const secondary = hasResearch() ? hero.secondaryCta : hero.secondaryCtaFallback;
   return (
     <section aria-labelledby="hero-name">
       <Container className="grid pt-2 lg:grid-cols-[minmax(0,1.45fr)_minmax(0,1fr)]">
@@ -23,11 +26,11 @@ export function Hero() {
             <Rich text={hero.intro} />
           </p>
           <div className="flex flex-wrap gap-3">
-            <ButtonLink href={hero.primaryCta.href} target="_blank" rel="noopener">
-              {hero.primaryCta.label}
+            <ButtonLink href={primary.href} {...(resume && { target: "_blank", rel: "noopener" })}>
+              {primary.label}
             </ButtonLink>
-            <ButtonLink href={hero.secondaryCta.href} variant="outline">
-              {hero.secondaryCta.label}
+            <ButtonLink href={secondary.href} variant="outline">
+              {secondary.label}
             </ButtonLink>
           </div>
         </div>
