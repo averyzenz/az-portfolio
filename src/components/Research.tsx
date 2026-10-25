@@ -24,7 +24,9 @@ export function Research() {
           </div>
           <p className="max-w-[420px] text-[16px] leading-[1.6] text-mist">{research.intro}</p>
         </div>
-        <ul className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <ul
+          className={`grid gap-5 md:grid-cols-2 ${research.notes.length % 3 === 0 ? "lg:grid-cols-3" : ""}`}
+        >
           {research.notes.map((note) => (
             <li key={note.href}>
               <article className="flex h-full min-h-[280px] flex-col gap-3.5 bg-paper p-6 text-ink [--focus:var(--color-ink)] sm:p-7">

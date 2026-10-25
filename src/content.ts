@@ -202,7 +202,7 @@ export const research = {
   label: "Writing",
   heading: "Published work",
   intro:
-    "Articles I have written for the Vanderbilt Business Review and beyond, from how private equity creates value to building a professional network.",
+    "Articles and research I have written, from how private equity creates value to how technology is reshaping haute couture.",
   /**
    * The section, its nav link and the "Read My Writing" button only appear
    * when this list has at least one entry. `href` can be an outside article
@@ -230,6 +230,16 @@ export const research = {
         "Why so many roles are filled through connections, and how a current profile, industry groups, and personalized outreach turn LinkedIn into real professional relationships.",
       href: "https://vanderbiltbusinessreview.com/2535/turning-connections-into-careers-mastering-linkedin-networking/",
       linkLabel: "Read the article",
+    },
+    {
+      type: "Research Paper",
+      date: "June 2025",
+      title: "The Future of Haute Couture: Where Technology Meets Tradition",
+      source: "Vanderbilt Maymester, Paris, Florence, and Milan",
+      summary:
+        "How 3D printing, AI, and digital fashion are reshaping haute couture, weighing gains in customization and sustainability against cost, scale, and the craft traditions that define the industry.",
+      href: "/research/future-of-haute-couture.pdf",
+      linkLabel: "Read the paper (PDF)",
     },
     {
       type: "Social Media",
