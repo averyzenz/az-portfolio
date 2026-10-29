@@ -1,7 +1,7 @@
 import { research } from "@/content";
 import { hasResearch } from "@/lib/files";
 import { Container } from "./Container";
-import { Rich } from "./Rich";
+import { ResearchCards } from "./ResearchCards";
 
 export function Research() {
   if (!hasResearch()) return null;
@@ -24,45 +24,7 @@ export function Research() {
           </div>
           <p className="max-w-[420px] text-[16px] leading-[1.6] text-mist">{research.intro}</p>
         </div>
-        <ul
-          className={`grid gap-5 md:grid-cols-2 ${research.notes.length % 3 === 0 ? "lg:grid-cols-3" : ""}`}
-        >
-          {research.notes.map((note) => (
-            <li key={note.href}>
-              <article className="flex h-full min-h-[280px] flex-col gap-3.5 bg-paper p-6 text-ink [--focus:var(--color-ink)] sm:p-7">
-                <div className="flex justify-between gap-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-rose">
-                  <span>{note.type}</span>
-                  <span>
-                    <Rich text={note.date} />
-                  </span>
-                </div>
-                {note.award && (
-                  <p className="self-start bg-blush px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-rose">
-                    <span aria-hidden="true">✦ </span>
-                    {note.award}
-                  </p>
-                )}
-                <h3 className="font-display text-[24px] font-medium leading-[1.2] sm:text-[26px]">
-                  <Rich text={note.title} />
-                </h3>
-                {note.source && <p className="-mt-1 text-[13px] italic text-body">{note.source}</p>}
-                <p className="text-[15px] leading-[1.6] text-body">
-                  <Rich text={note.summary} />
-                </p>
-                <a
-                  href={note.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-auto inline-flex min-h-11 items-center self-start text-[13px] font-semibold uppercase tracking-[0.12em] text-ink underline underline-offset-4 hover:text-rose"
-                >
-                  {note.linkLabel}
-                  <span aria-hidden="true">&nbsp;↗</span>
-                  <span className="sr-only"> (opens in a new tab)</span>
-                </a>
-              </article>
-            </li>
-          ))}
-        </ul>
+        <ResearchCards notes={research.notes} />
       </Container>
     </section>
   );
