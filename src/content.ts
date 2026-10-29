@@ -211,6 +211,16 @@ export const research = {
    */
   notes: [
     {
+      type: "Luxury Fashion",
+      date: "October 2026",
+      title: "The Anderson Investment: Dior's Calculated Move",
+      source: "Vanderbilt Business Review",
+      summary:
+        "Why Dior's appointment of Jonathan Anderson as creative director is a strategic bet on his success at Loewe, and why the house's larger scale and his oversight of all three collections raise the stakes.",
+      href: "https://vanderbiltbusinessreview.com/3061/the-anderson-investment-diors-calculated-move/",
+      linkLabel: "Read the article",
+    },
+    {
       type: "Private Equity",
       date: "November 2025",
       title: "Fixer-Uppers of Finance: How Private Equity Turns Struggling Companies into Gold",
